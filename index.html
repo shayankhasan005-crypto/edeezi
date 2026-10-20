@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Edeezi Education | #1 Personalized 1-on-1 Tuition & Academic Coaching — Kottakkal</title>
+  <meta name="description" content="Edeezi Tuition (Education Double Easy) offers concept-focused tutoring for KG to 12th grade in CBSE, State (SSLC/DHSE) & ICSE syllabuses. In-person & Online classes at Zabeel Complex, Changuvetty, Kottakkal. Book a Free Demo!">
+
+  <link rel="icon" type="image/png" href="logo-transparent.png">
+  <link rel="apple-touch-icon" href="logo-transparent.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#F68D1E',
+              dark: '#14282F',
+              light: '#FFF1E3',
+              hover: '#e07d15'
+            },
+            accent: {
+              DEFAULT: '#F68D1E',
+              dark: '#14282F',
+              light: '#FFF7EF',
+              yellow: '#F68D1E'
+            },
+            'school-yellow': {
+              DEFAULT: '#F68D1E',
+              light: '#FFF7EF'
+            },
+            edeezi: {
+              orange: '#F68D1E',
+              'orange-light': '#F68D1E',
+              'orange-subtle': '#FFF1E3'
+            },
+            text: {
+              primary: '#14282F',
+              secondary: '#415B63',
+              muted: '#6B7F85'
+            },
+            border: {
+              DEFAULT: '#E7E7E7',
+              light: '#F0F0F0'
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          },
+          keyframes: {
+            'marquee-track': {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' }
+            }
+          },
+          animation: {
+            'marquee-track': 'marquee-track 28s linear infinite'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* Custom base styles */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #F68D1E; color: #fff;
+      padding: 10px 22px; border-radius: 9999px;
+      font-weight: 800; transition: all 0.18s;
+      border: none; cursor: pointer; font-family: inherit;
+    }
+    .btn-primary:hover { background: #14282F; transform: translateY(-1px); }
+
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; color: #14282F;
+      padding: 10px 22px; border-radius: 9999px;
+      font-weight: 800; transition: all 0.18s;
+      border: 1.5px solid #E7E7E7; cursor: pointer; font-family: inherit;
+    }
+    .btn-white:hover { border-color: #F68D1E; color: #F68D1E; }
+
+    .btn-accent {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; color: #14282F;
+      padding: 10px 22px; border-radius: 9999px;
+      font-weight: 800; transition: all 0.18s;
+      border: none; cursor: pointer; font-family: inherit;
+    }
+    .btn-accent:hover { background: #FFF7EF; }
+
+    .pill-white {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: #fff; border: 1px solid #E7E7E7; border-radius: 9999px;
+      cursor: pointer; transition: all 0.15s;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 1.25rem;
+      box-shadow: 0 2px 16px rgba(246,141,30,0.06), 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    /* Marquee animation */
+    .animate-marquee-track { animation: marquee-track 28s linear infinite; }
+    @keyframes marquee-track {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Top announcement bar: slightly faster, pauses on hover/touch */
+    .top-marquee-track {
+      animation: marquee-track 24s linear infinite;
+      will-change: transform;
+    }
+    .top-marquee-wrap:focus-within .top-marquee-track,
+    .top-marquee-track:active,
+    .top-marquee-track.marquee-paused {
+      animation-play-state: paused;
+    }
+    @media (hover: hover) {
+      .top-marquee-wrap:hover .top-marquee-track { animation-play-state: paused; }
+    }
+    @media (max-width: 639px) {
+      .top-marquee-track { animation-duration: 15s; }
+    }
+
+    /* Bot chat bubble */
+    .chat-bubble-bot {
+      background: #FFF1E3; border: 1px solid #FFD9B0;
+      border-radius: 0 1rem 1rem 1rem; max-width: 90%;
+    }
+    .chat-bubble-user {
+      background: #F68D1E; color: #fff;
+      border-radius: 1rem 0 1rem 1rem; max-width: 90%;
+      padding: 0.75rem 1rem; font-size: 0.75rem;
+    }
+    /* Clean horizontal scrollers */
+    .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+
+    dialog::backdrop { background: rgba(0,0,0,0.45); backdrop-filter: blur(4px); }
+    dialog { max-height: 90vh; overflow-y: auto; }
+
+    /* Tab active */
+    .tab-active { background: #F68D1E !important; color: #fff !important; }
+
+  </style>
+</head>
+
+<body class="bg-[#FFFFFF] text-[#14282F] font-sans antialiased min-h-screen flex flex-col selection:bg-orange-100 selection:text-[#14282F]">
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 1. Top Announcement Marquee Banner     -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- Mobile announcement bar -->
+  <div class="top-marquee-wrap sm:hidden w-full bg-gradient-to-r from-[#F68D1E] via-[#ffab54] to-[#F68D1E] border-b border-[#14282F]/20 text-[#14282F] py-2 overflow-hidden select-none relative z-50">
+    <div class="top-marquee-track flex w-max items-center">
+      <!-- Group 1 -->
+      <div class="flex items-center gap-2 px-2.5 min-w-[100vw] shrink-0 whitespace-nowrap">
+        <button onclick="openBookingModal('Admissions 2026-27')" aria-label="Admissions open 2026-27" class="w-8 h-8 rounded-lg bg-[#14282F] text-white flex items-center justify-center shrink-0 active:scale-95 transition">
+          <i class="fa-solid fa-bolt text-sm"></i>
+        </button>
+        <button onclick="openBookingModal()" class="inline-flex items-center gap-1.5 text-[10px] tracking-tight font-black shrink-0">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Book Your Free 3-Day Demo Class</span>
+        </button>
+        <a href="#advantage" class="inline-flex items-center gap-1.5 text-[10px] tracking-tight font-extrabold shrink-0">
+          <i class="fa-solid fa-user-group"></i>
+          <span class="min-[400px]:hidden">Expert Mentors</span>
+          <span class="hidden min-[400px]:inline">Learn from Expert Subject Mentors</span>
+        </a>
+      </div>
+      <!-- Group 2 (clone) -->
+      <div class="flex items-center gap-2 px-2.5 min-w-[100vw] shrink-0 whitespace-nowrap" aria-hidden="true" data-marquee-clone>
+        <button onclick="openBookingModal('Admissions 2026-27')" aria-label="Admissions open 2026-27" class="w-8 h-8 rounded-lg bg-[#14282F] text-white flex items-center justify-center shrink-0 active:scale-95 transition">
+          <i class="fa-solid fa-bolt text-sm"></i>
+        </button>
+        <button onclick="openBookingModal()" class="inline-flex items-center gap-1.5 text-[10px] tracking-tight font-black shrink-0">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Book Your Free 3-Day Demo Class</span>
+        </button>
+        <a href="#advantage" class="inline-flex items-center gap-1.5 text-[10px] tracking-tight font-extrabold shrink-0">
+          <i class="fa-solid fa-user-group"></i>
+          <span class="min-[400px]:hidden">Expert Mentors</span>
+          <span class="hidden min-[400px]:inline">Learn from Expert Subject Mentors</span>
+        </a>
+      </div>
+      <!-- Group 3 (clone) -->
+      <div class="flex items-center gap-2 px-2.5 min-w-[100vw] shrink-0 whitespace-nowrap" aria-hidden="true" data-marquee-clone>
+        <button onclick="openBookingModal('Admissions 2026-27')" aria-label="Admissions open 2026-27" class="w-8 h-8 rounded-lg bg-[#14282F] text-white flex items-center justify-center shrink-0 active:scale-95 transition">
+          <i class="fa-solid fa-bolt text-sm"></i>
+        </button>
+        <button onclick="openBookingModal()" class="inline-flex items-center gap-1.5 text-[10px] tracking-tight font-black shrink-0">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Book Your Free 3-Day Demo Class</span>
+        </button>
+        <a href="#advantage" class="inline-flex items-center gap-1.5 text-[10px] tracking-tight font-extrabold shrink-0">
+          <i class="fa-solid fa-user-group"></i>
+          <span class="min-[400px]:hidden">Expert Mentors</span>
+          <span class="hidden min-[400px]:inline">Learn from Expert Subject Mentors</span>
+        </a>
+      </div>
+      <!-- Group 4 (clone) -->
+      <div class="flex items-center gap-2 px-2.5 min-w-[100vw] shrink-0 whitespace-nowrap" aria-hidden="true" data-marquee-clone>
+        <button onclick="openBookingModal('Admissions 2026-27')" aria-label="Admissions open 2026-27" class="w-8 h-8 rounded-lg bg-[#14282F] text-white flex items-center justify-center shrink-0 active:scale-95 transition">
+          <i class="fa-solid fa-bolt text-sm"></i>
+        </button>
+        <button onclick="openBookingModal()" class="inline-flex items-center gap-1.5 text-[10px] tracking-tight font-black shrink-0">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Book Your Free 3-Day Demo Class</span>
+        </button>
+        <a href="#advantage" class="inline-flex items-center gap-1.5 text-[10px] tracking-tight font-extrabold shrink-0">
+          <i class="fa-solid fa-user-group"></i>
+          <span class="min-[400px]:hidden">Expert Mentors</span>
+          <span class="hidden min-[400px]:inline">Learn from Expert Subject Mentors</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="top-marquee-banner" class="top-marquee-wrap hidden sm:block w-full bg-gradient-to-r from-[#F68D1E] via-[#ffab54] to-[#F68D1E] border-b border-[#14282F]/20 text-[#14282F] py-1.5 overflow-hidden select-none relative z-50">
+    <div class="relative w-full overflow-hidden">
+      <div class="top-marquee-track flex w-max items-center">
+        <!-- Loop 1 -->
+        <div class="flex items-center gap-5 sm:gap-8 shrink-0 px-2">
+          <button onclick="openBookingModal('Admissions 2026-27')" class="inline-flex items-center gap-1.5 px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full text-[11px] sm:text-xs transition-all duration-200 active:scale-95 whitespace-nowrap cursor-pointer bg-[#14282F] hover:bg-[#0b171c] text-white font-extrabold shadow-xs hover:scale-105">
+            <i class="fa-solid fa-graduation-cap text-orange-200"></i>
+            <span>Admissions Open 2026-27</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-0.5 opacity-80"></i>
+          </button>
+          <a class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs hover:opacity-80 transition-opacity whitespace-nowrap cursor-pointer text-slate-950 font-black" href="#demoModal" onclick="event.preventDefault(); openBookingModal();">
+            <i class="fa-solid fa-calendar-check text-[#14282F]"></i>
+            <span>Book Your Free 3-Day Demo Class</span>
+          </a>
+          <a class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs hover:opacity-80 transition-opacity whitespace-nowrap cursor-pointer text-slate-900 font-extrabold" href="#advantage">
+            <i class="fa-solid fa-chalkboard-user text-[#14282F]"></i>
+            <span>Learn from Expert Subject Mentors</span>
+          </a>
+          <a class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs hover:opacity-80 transition-opacity whitespace-nowrap cursor-pointer text-[#14282F] font-black" href="#courses">
+            <i class="fa-solid fa-bullseye text-[#F68D1E]"></i>
+            <span>Personalized 1-on-1 Concept Tuition</span>
+          </a>
+          <a class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs hover:opacity-80 transition-opacity whitespace-nowrap cursor-pointer text-slate-950 font-black" href="#courses">
+            <i class="fa-solid fa-trophy text-[#14282F]"></i>
+            <span>CBSE, Kerala State (SSLC/DHSE) &amp; ICSE</span>
+          </a>
+          <a class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs hover:opacity-80 transition-opacity whitespace-nowrap cursor-pointer text-[#14282F] font-extrabold" href="#contact">
+            <i class="fa-solid fa-location-dot text-[#14282F]"></i>
+            <span>Zabeel Complex, Changuvetty, Kottakkal</span>
+          </a>
+        </div>
+        <!-- Loop 2 (clone) -->
+        <div class="flex items-center gap-5 sm:gap-8 shrink-0 px-2" aria-hidden="true" data-marquee-clone>
+          <button onclick="openBookingModal('Admissions 2026-27')" class="inline-flex items-center gap-1.5 px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full text-[11px] sm:text-xs transition-all duration-200 active:scale-95 whitespace-nowrap cursor-pointer bg-[#14282F] hover:bg-[#0b171c] text-white font-extrabold shadow-xs hover:scale-105">
+            <i class="fa-solid fa-graduation-cap text-orange-200"></i>
+            <span>Admissions Open 2026-27</span>
+            <i class="fa-solid fa-arrow-right text-[10px] ml-0.5 opacity-80"></i>
+          </button>
+          <a class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs hover:opacity-80 transition-opacity whitespace-nowrap cursor-pointer text-slate-950 font-black" href="#demoModal" onclick="event.preventDefault(); openBookingModal();">
+            <i class="fa-solid fa-calendar-check text-[#14282F]"></i>
+            <span>Book Your Free 3-Day Demo Class</span>
+          </a>
+          <a class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs hover:opacity-80 transition-opacity whitespace-nowrap cursor-pointer text-slate-900 font-extrabold" href="#advantage">
+            <i class="fa-solid fa-chalkboard-user text-[#14282F]"></i>
+            <span>Learn from Expert Subject Mentors</span>
+          </a>
+          <a class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs hover:opacity-80 transition-opacity whitespace-nowrap cursor-pointer text-[#14282F] font-black" href="#courses">
+            <i class="fa-solid fa-bullseye text-[#F68D1E]"></i>
+            <span>Personalized 1-on-1 Concept Tuition</span>
+          </a>
+          <a class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs hover:opacity-80 transition-opacity whitespace-nowrap cursor-pointer text-slate-950 font-black" href="#courses">
+            <i class="fa-solid fa-trophy text-[#14282F]"></i>
+            <span>CBSE, Kerala State (SSLC/DHSE) &amp; ICSE</span>
+          </a>
+          <a class="inline-flex items-center gap-1.5 text-[11px] sm:text-xs hover:opacity-80 transition-opacity whitespace-nowrap cursor-pointer text-[#14282F] font-extrabold" href="#contact">
+            <i class="fa-solid fa-location-dot text-[#14282F]"></i>
+            <span>Zabeel Complex, Changuvetty, Kottakkal</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 2. Sticky Glassmorphism Header         -->
+  <!-- ═══════════════════════════════════════ -->
+  <header id="mainHeader" class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-[#14282F]/10 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between gap-4">
+
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 hover:scale-105 transition-transform shrink-0" aria-label="Edeezi Education">
+        <img src="logo-transparent.png" alt="Edeezi Logo" class="h-9 sm:h-12 w-auto object-contain">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden xl:flex items-center gap-1 text-[13px] font-heading font-bold text-[#415B63]">
+        <a href="#hero" class="px-3.5 py-1.5 rounded-full text-[#F68D1E] bg-orange-50 font-extrabold transition">Home</a>
+        <a href="#advantage" class="px-3.5 py-1.5 rounded-full hover:text-[#F68D1E] hover:bg-orange-50 transition">Advantage</a>
+        <a href="#courses" class="px-3.5 py-1.5 rounded-full hover:text-[#F68D1E] hover:bg-orange-50 transition">Programs</a>
+        <a href="#how-it-works" class="px-3.5 py-1.5 rounded-full hover:text-[#F68D1E] hover:bg-orange-50 transition">How it Works</a>
+        <a href="#reviews" class="px-3.5 py-1.5 rounded-full hover:text-[#F68D1E] hover:bg-orange-50 transition flex items-center gap-1">
+          <span>Reviews</span>
+          <span class="text-orange-500 text-xs">★ 4.9</span>
+        </a>
+        <a href="#contact" class="px-3.5 py-1.5 rounded-full hover:text-[#F68D1E] hover:bg-orange-50 transition">Campus</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="https://wa.me/916238270399?text=Hello%20Edeezi%20Tuition,%20I%20would%20like%20to%20inquire%20about%20classes." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-emerald-300 text-xs font-extrabold text-emerald-800 hover:bg-emerald-50 transition">
+          <i class="fa-brands fa-whatsapp text-emerald-600 text-sm"></i>
+          <span>WhatsApp</span>
+        </a>
+        <button id="headerDemoBtn" class="btn-primary text-[13px] sm:text-sm py-2.5 sm:py-2.5 px-4 sm:px-6">
+          <span>Book Free Class</span>
+          <i class="fa-solid fa-arrow-right text-[11px]"></i>
+        </button>
+        <button id="mobileMenuToggle" aria-label="Toggle menu" class="xl:hidden w-10 h-10 rounded-full flex items-center justify-center border border-[#14282F]/10 text-slate-700 hover:text-[#F68D1E] hover:bg-orange-50 transition active:scale-95 cursor-pointer bg-white">
+          <i class="fa-solid fa-bars text-sm" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileDrawer" class="hidden xl:hidden bg-white/95 backdrop-blur-md border-b border-[#14282F]/10 px-6 py-5 space-y-2.5 shadow-md">
+      <a href="#hero" class="block py-2 text-sm font-bold text-[#14282F] mobile-nav-link">Home</a>
+      <a href="#advantage" class="block py-2 text-sm font-bold text-[#14282F] mobile-nav-link">The Edeezi Advantage</a>
+      <a href="#courses" class="block py-2 text-sm font-bold text-[#14282F] mobile-nav-link">Academic Programs (KG-12)</a>
+      <a href="#how-it-works" class="block py-2 text-sm font-bold text-[#14282F] mobile-nav-link">How It Works (4 Steps)</a>
+      <a href="#reviews" class="block py-2 text-sm font-bold text-[#14282F] mobile-nav-link">Reviews (4.9 ★)</a>
+      <a href="#contact" class="block py-2 text-sm font-bold text-[#14282F] mobile-nav-link">Campus Location (Changuvetty)</a>
+      <div class="pt-3 flex flex-col gap-2 border-t border-[#14282F]/10">
+        <button id="mobileDemoBtn" class="btn-primary w-full py-3 text-xs font-bold text-center justify-center">
+          Book Free 3-Day Demo
+        </button>
+        <a href="https://wa.me/916238270399?text=Hello%20Edeezi%20Tuition,%20I%20would%20like%20to%20inquire%20about%20admissions." target="_blank" rel="noopener noreferrer" class="btn-white w-full py-3 text-xs font-bold text-center flex items-center justify-center gap-2 text-emerald-800 border-emerald-300">
+          <i class="fa-brands fa-whatsapp text-emerald-600"></i> WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 3. Hero Section                        -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="hero" class="relative pt-12 sm:pt-20 lg:pt-24 pb-12 sm:pb-20 overflow-hidden min-h-[82vh] flex items-center">
+      <!-- Background aura glows -->
+      <div class="absolute top-0 left-0 w-full h-[80vh] bg-gradient-to-t from-orange-50/90 via-orange-50/40 to-transparent sm:bg-gradient-to-b pointer-events-none -z-10"></div>
+      <div class="hidden sm:block absolute top-10 right-10 w-[42vw] max-w-[460px] aspect-square bg-orange-100/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div class="hidden sm:block absolute top-36 left-10 w-[32vw] max-w-[380px] aspect-square bg-orange-100/50 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+          <!-- Left: Copy & CTAs -->
+          <div class="order-2 lg:order-1 lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left pt-2 md:pt-0">
+
+            <!-- Headline -->
+            <h1 class="order-2 lg:order-1 text-[26px] min-[400px]:text-[27px] min-[415px]:text-[28px] min-[430px]:text-[29px] sm:text-5xl lg:text-[54px] xl:text-[60px] font-black leading-[1.16] sm:leading-[1.12] text-[#14282F] mb-4 sm:mb-5 tracking-tight font-heading">
+              Because Every Child <br class="hidden sm:inline">Deserves
+              <span class="relative inline-block text-[#F68D1E]">
+                Personal Attention
+                <svg class="absolute -bottom-1.5 sm:-bottom-2 left-0 w-full h-2.5 sm:h-3 text-orange-300 pointer-events-none" viewBox="0 0 100 20" preserveAspectRatio="none">
+                  <path d="M0 15 Q 50 0 100 15" stroke="currentColor" stroke-width="7" fill="none" stroke-linecap="round"></path>
+                </svg>
+              </span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="order-3 lg:order-2 text-[15px] sm:text-lg lg:text-xl font-medium sm:font-bold text-[#415B63] leading-relaxed max-w-xl mb-6 sm:mb-8">
+              Welcome to <span class="text-[#F68D1E] font-black underline decoration-orange-300 underline-offset-4">Edeezi</span> (Education Double Easy). We combine the rigor of personalized 1-on-1 attention with interactive coaching to inspire every student to gain absolute concept clarity, top board marks, and lifelong confidence.
+            </p>
+
+            <!-- CTAs -->
+            <div class="order-1 lg:order-3 grid grid-cols-2 gap-2 sm:flex sm:flex-row items-center justify-center lg:justify-start sm:gap-3.5 mb-8 sm:mb-8 w-full sm:w-auto">
+              <button id="heroDemoBtn" class="btn-primary py-3.5 px-3 sm:py-3.5 sm:px-8 text-sm sm:text-base font-black shadow-md flex items-center justify-center gap-2 w-full sm:w-auto">
+                <span>Book Free Demo</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </button>
+              <a href="#courses" class="btn-white py-3.5 px-3 sm:py-3.5 sm:px-8 text-sm sm:text-base font-black flex items-center justify-center gap-2 w-full sm:w-auto">
+                <i class="fa-solid fa-book-open text-[#F68D1E] text-xs sm:text-sm"></i>
+                <span>Learning Paths</span>
+              </a>
+            </div>
+
+            <!-- Grade pills -->
+            <div class="order-4 lg:order-4 hidden sm:block pt-4 sm:pt-5 border-t border-[#14282F]/10 w-full">
+              <div class="flex flex-wrap gap-2 justify-center lg:justify-start items-center">
+                <a class="flex items-center gap-1.5 py-1 px-3 rounded-full bg-[#FFF7EF] border border-[#F68D1E]/30 hover:border-[#F68D1E] hover:bg-[#FFE9D2] transition" href="#courses">
+                  <span class="w-4 h-4 rounded-full bg-[#FFE0BF] flex items-center justify-center text-[10px] shrink-0">🎒</span>
+                  <span class="text-[11px] font-black text-[#14282F]">Primary (KG - 5th)</span>
+                </a>
+                <a class="flex items-center gap-1.5 py-1 px-3 rounded-full bg-[#FFF7EF] border border-[#F68D1E]/30 hover:border-[#F68D1E] hover:bg-[#FFE9D2] transition" href="#courses">
+                  <span class="w-4 h-4 rounded-full bg-[#FFE0BF] flex items-center justify-center text-[10px] shrink-0">📘</span>
+                  <span class="text-[11px] font-black text-[#14282F]">Middle School (6th - 8th)</span>
+                </a>
+                <a class="flex items-center gap-1.5 py-1 px-3 rounded-full bg-[#FFF7EF] border border-[#F68D1E]/30 hover:border-[#F68D1E] hover:bg-[#FFE9D2] transition" href="#courses">
+                  <span class="w-4 h-4 rounded-full bg-[#FFE0BF] flex items-center justify-center text-[10px] shrink-0">🏆</span>
+                  <span class="text-[11px] font-black text-[#14282F]">High School Board (9th &amp; 10th)</span>
+                </a>
+                <a class="flex items-center gap-1.5 py-1 px-3 rounded-full bg-[#FFF7EF] border border-[#F68D1E]/30 hover:border-[#F68D1E] hover:bg-[#FFE9D2] transition" href="#courses">
+                  <span class="w-4 h-4 rounded-full bg-[#FFE0BF] flex items-center justify-center text-[10px] shrink-0">🚀</span>
+                  <span class="text-[11px] font-black text-[#14282F]">Plus One &amp; Two (+1 / +2)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Brand logo -->
+          <div class="order-1 lg:order-2 lg:col-span-5 relative flex items-center justify-center min-h-[300px] sm:min-h-[400px] lg:min-h-[460px]">
+            <div class="absolute w-[85%] aspect-square max-w-[440px] rounded-full bg-gradient-to-br from-[#F68D1E]/20 via-[#F68D1E]/5 to-transparent blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 w-full max-w-[420px] rounded-[2rem] bg-white border border-slate-200 shadow-xl p-8 sm:p-10 flex flex-col items-center gap-5">
+              <img src="logo-transparent.png" alt="Edeezi — Education Double Easy" class="w-full h-auto object-contain mx-auto">
+              <p class="text-[15px] font-extrabold text-slate-600 text-center leading-relaxed">
+                Personalized 1-on-1 tuition<br class="sm:hidden"> • KG to Grade 12
+              </p>
+              <div class="inline-flex items-center gap-2 text-[13px] font-black text-[#14282F] bg-[#FFF1E3] px-4 py-2 rounded-full border border-[#F68D1E]/30">
+                <i class="fa-solid fa-star text-orange-500 text-[11px]"></i>
+                <span>4.9 ★ Parent Rating</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 4. The Edeezi Advantage                -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="advantage" class="bg-white border-y border-[#14282F]/10 py-12 sm:py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+          <p class="text-[10px] sm:text-xs font-black uppercase tracking-widest text-[#F68D1E] mb-2">THE ADVANTAGE</p>
+          <h2 class="text-2xl sm:text-4xl font-black text-[#14282F] mb-3 font-heading">Why Choose EDEEZI?</h2>
+          <p class="text-xs sm:text-base font-bold text-[#415B63] leading-relaxed">
+            We combine the rigor of personalized 1-on-1 attention with the collaborative energy of interactive learning.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-7">
+          <div class="card p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] border border-[#14282F]/10 flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#FFF1E3] border border-[#F68D1E]/30 text-[#F68D1E] flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-[#14282F] font-heading">Personalized 1-on-1 Attention</h3>
+            <p class="text-xs sm:text-sm font-medium text-[#415B63] leading-relaxed">
+              Tailored lesson plans designed around your child's learning speed, strengths, challenges, and individual exam milestones.
+            </p>
+          </div>
+
+          <div class="card p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] border border-[#14282F]/10 flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#FFF1E3] border border-[#F68D1E]/30 text-[#F68D1E] flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-[#14282F] font-heading">Diagnostic &amp; Continuous Assessment</h3>
+            <p class="text-xs sm:text-sm font-medium text-[#415B63] leading-relaxed">
+              Initial diagnostic check to identify knowledge gaps, weekly chapter test series, and transparent parent-friendly progress report cards.
+            </p>
+          </div>
+
+          <div class="card p-6 sm:p-8 rounded-2xl sm:rounded-[2rem] border border-[#14282F]/10 flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#FFF1E3] border border-[#F68D1E]/30 text-[#F68D1E] flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="text-lg sm:text-xl font-black text-[#14282F] font-heading">Dedicated Mentors &amp; Edeezi Bot</h3>
+            <p class="text-xs sm:text-sm font-medium text-[#415B63] leading-relaxed">
+              Qualified subject specialists ensure academic consistency, paired with the 24/7 <span class="font-black text-[#F68D1E]">Edeezi Bot</span> for instant answers about courses, timings and admissions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 5. How It Works                        -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="how-it-works" class="py-12 sm:py-16 lg:py-24 bg-[#FFF7EF]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+          <p class="text-[10px] sm:text-xs font-black uppercase tracking-widest text-[#F68D1E] mb-2">STEP-BY-STEP PROCESS</p>
+          <h2 class="text-2xl sm:text-4xl lg:text-[42px] font-black text-[#14282F] mb-3 font-heading leading-tight">How EDEEZI Works</h2>
+          <p class="text-xs sm:text-base font-bold text-[#415B63] leading-relaxed">
+            A simple, proven path to conceptual clarity. We follow a 4-step approach to ensure every student receives the right guidance, support, and results.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div class="card p-6 rounded-2xl sm:rounded-[1.75rem] border border-[#14282F]/10 bg-white flex flex-col gap-3">
+            <span class="w-8 h-8 rounded-full bg-[#F68D1E] text-white font-black text-xs flex items-center justify-center">1</span>
+            <h3 class="text-base font-black text-[#14282F] font-heading">1. Know Us</h3>
+            <p class="text-xs font-medium text-[#415B63] leading-relaxed">Connect with our academic counseling team to understand Edeezi's concept-first coaching methodology and curriculum coverage.</p>
+          </div>
+          <div class="card p-6 rounded-2xl sm:rounded-[1.75rem] border border-[#14282F]/10 bg-white flex flex-col gap-3">
+            <span class="w-8 h-8 rounded-full bg-[#F68D1E] text-white font-black text-xs flex items-center justify-center">2</span>
+            <h3 class="text-base font-black text-[#14282F] font-heading">2. Understand Student</h3>
+            <p class="text-xs font-medium text-[#415B63] leading-relaxed">We conduct a complimentary baseline assessment to evaluate your child's current learning level, strengths, challenges, and pace.</p>
+          </div>
+          <div class="card p-6 rounded-2xl sm:rounded-[1.75rem] border border-[#14282F]/10 bg-white flex flex-col gap-3">
+            <span class="w-8 h-8 rounded-full bg-[#F68D1E] text-white font-black text-xs flex items-center justify-center">3</span>
+            <h3 class="text-base font-black text-[#14282F] font-heading">3. 3-Day Free Demo</h3>
+            <p class="text-xs font-medium text-[#415B63] leading-relaxed">Experience our mentors' interactive teaching, evaluate classroom comfort, and observe instant concept clarification first-hand.</p>
+          </div>
+          <div class="card p-6 rounded-2xl sm:rounded-[1.75rem] border border-[#14282F]/10 bg-white flex flex-col gap-3">
+            <span class="w-8 h-8 rounded-full bg-[#F68D1E] text-white font-black text-xs flex items-center justify-center">4</span>
+            <h3 class="text-base font-black text-[#14282F] font-heading">4. Custom Study Roadmap</h3>
+            <p class="text-xs font-medium text-[#415B63] leading-relaxed">A personalized study timetable in small batches (max 8-10), continuous doubt support, and weekly progress updates to parents.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 6. Academic Programs                   -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="courses" class="py-12 sm:py-16 lg:py-24 bg-white border-b border-[#14282F]/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 space-y-8">
+        <div class="text-center max-w-2xl mx-auto space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-[#14282F] font-bold text-[11px] uppercase tracking-wider">
+            <i class="fa-solid fa-book-open"></i> Academic Programs (KG – 12)
+          </div>
+          <h2 class="text-2xl sm:text-4xl lg:text-[42px] font-black text-[#14282F] font-heading leading-tight">
+            Explore Our <span class="text-[#F68D1E]">Academic Programs</span>
+          </h2>
+          <p class="text-xs sm:text-base font-medium text-[#415B63] leading-relaxed">
+            Targeted coaching for CBSE, State Board (SSLC &amp; DHSE), and ICSE from KG to 12th Grade.
+          </p>
+
+          <!-- Tab switcher -->
+          <div class="flex flex-wrap items-center justify-center gap-2 pt-3" id="courseTabs">
+            <button data-course="primary" class="course-tab-btn px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold transition-all border border-[#14282F]/10 bg-[#F68D1E] text-white shadow-sm">Primary (KG – 5th)</button>
+            <button data-course="middle" class="course-tab-btn px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold transition-all border border-[#14282F]/10 bg-white text-[#415B63] hover:border-orange-300">Middle School (6th – 8th)</button>
+            <button data-course="highschool" class="course-tab-btn px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold transition-all border border-[#14282F]/10 bg-white text-[#415B63] hover:border-orange-300">High School (9th &amp; 10th)</button>
+            <button data-course="highersecondary" class="course-tab-btn px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold transition-all border border-[#14282F]/10 bg-white text-[#415B63] hover:border-orange-300">Plus One &amp; Two (11th &amp; 12th)</button>
+          </div>
+        </div>
+
+        <div id="courseContentArea" class="card p-6 sm:p-8 bg-[#FFFFFF]"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 11. Reviews                            -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="reviews" class="py-12 sm:py-16 lg:py-20 bg-[#FFFFFF] border-b border-[#14282F]/10 overflow-hidden select-none">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center mb-8 sm:mb-12">
+        <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-orange-50 border border-orange-200 text-[#14282F] font-bold text-[10px] sm:text-xs uppercase tracking-wider mb-2.5">
+          <i class="fa-solid fa-star text-orange-500"></i> Verified Feedback
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-black text-[#14282F] mb-2.5 font-heading">
+          Real Results from <span class="text-[#F68D1E]">Real Students &amp; Parents</span>
+        </h2>
+        <p class="text-xs sm:text-base font-bold text-[#415B63] max-w-xl mx-auto">
+          See how Edeezi transforms academic journeys through personalized 1-on-1 tutoring. (Rated 4.9 ★ on Google Maps)
+        </p>
+      </div>
+
+      <div class="w-full overflow-hidden relative py-2">
+        <div class="absolute left-0 top-0 bottom-0 w-8 sm:w-28 bg-gradient-to-r from-[#FFFFFF] to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-8 sm:w-28 bg-gradient-to-l from-[#FFFFFF] to-transparent z-10 pointer-events-none"></div>
+        <div class="animate-marquee-track flex gap-4 px-4" id="reviewsMarqueeTrack"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 mt-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="reviewsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 13. Contact & Campus                   -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="contact" class="py-12 sm:py-16 bg-white border-b border-[#14282F]/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 space-y-8">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+          <p class="text-[10px] sm:text-xs font-black uppercase tracking-widest text-[#F68D1E]">FIND US</p>
+          <h2 class="text-2xl sm:text-3xl font-black text-[#14282F] font-heading">Campus Location &amp; Inquiries</h2>
+          <p class="text-xs sm:text-sm text-[#415B63]">Visit our center in Kottakkal or connect with an academic counselor directly.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Info Card -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="card p-6 sm:p-7 space-y-4 bg-[#FFFFFF]">
+              <div>
+                <span class="text-xs font-black text-[#F68D1E] uppercase tracking-wider block">Physical Center</span>
+                <h3 class="text-xl font-bold text-[#14282F] font-heading mt-0.5">Zabeel Complex, Changuvetty</h3>
+                <p class="text-xs sm:text-sm text-[#415B63] mt-1 leading-relaxed">Malappuram Road, Changuvetty, Kottakkal, Kerala 676503</p>
+                <p class="text-xs font-mono text-[#6B7F85] mt-1.5">Plus Code: <strong>2X2V+37 Changuvetty</strong></p>
+              </div>
+              <div class="pt-3 border-t border-[#14282F]/10 space-y-2.5 text-xs text-[#415B63]">
+                <div class="flex items-center justify-between">
+                  <span>Operating Hours:</span>
+                  <strong class="text-[#14282F]">Opens 10:00 AM (Mon - Sat)</strong>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span>Counselor Hotline:</span>
+                  <strong class="text-[#14282F]">+91 62382 70399</strong>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span>Secondary Contact:</span>
+                  <strong class="text-[#14282F]">+91 70120 70399</strong>
+                </div>
+              </div>
+              <div class="pt-3 flex items-center gap-3">
+                <a href="https://wa.me/916238270399?text=Hello%20Edeezi,%20I%20would%20like%20to%20know%20about%20classes." target="_blank" rel="noopener noreferrer" class="btn-primary flex-1 py-3 text-xs text-center flex items-center justify-center gap-2">
+                  <i class="fa-brands fa-whatsapp text-sm"></i>
+                  <span>Message on WhatsApp</span>
+                </a>
+                <a href="tel:+916238270399" class="btn-white px-4 py-3 text-xs text-center" aria-label="Call Edeezi">
+                  <i class="fa-solid fa-phone"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="lg:col-span-7">
+            <div class="card p-3 bg-white">
+              <div class="w-full h-72 sm:h-80 rounded-2xl overflow-hidden bg-slate-100">
+                <iframe src="https://maps.google.com/maps?q=Changuvetty%20Kottakkal%20Zabeel%20Complex&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade" title="Edeezi Tuition Location Map"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 12. FAQ                                -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="faq" class="py-12 sm:py-16 bg-[#FFF7EF] border-b border-[#14282F]/10">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
+        <div class="text-center max-w-xl mx-auto space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-50 text-[#F68D1E] text-xs font-extrabold border border-orange-200">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>Have Questions?</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-black text-[#14282F] font-heading">Frequently Asked Questions</h2>
+          <p class="text-xs sm:text-sm text-[#415B63]">Everything you need to know about joining Edeezi Tuition and our learning programs.</p>
+        </div>
+        <div class="space-y-3" id="faqContainer"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- 14. CTA Banner                         -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="py-12 sm:py-16 lg:py-20 bg-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="rounded-2xl sm:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 shadow-xl"
+          style="background: linear-gradient(135deg, #F68D1E 0%, #14282F 100%);">
+          <div class="text-center lg:text-left max-w-xl text-white">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white font-black text-[10px] sm:text-xs uppercase tracking-wider mb-3">
+              <i class="fa-solid fa-sparkles text-orange-300"></i>
+              Ready to start your journey?
+            </span>
+            <h3 class="text-xl sm:text-3xl lg:text-4xl font-black text-white mb-2.5 font-heading leading-tight">
+              Give your child the gift of personal academic attention.
+            </h3>
+            <p class="text-xs sm:text-base font-medium text-white/90 leading-relaxed">
+              No credit card or upfront commitment required for your first 3-day demo session. Connect with our counselors today.
+            </p>
+          </div>
+          <button onclick="openBookingModal('CTA Banner')" class="btn-accent py-3.5 px-8 text-sm sm:text-base font-black shadow-md flex items-center justify-center gap-2 w-full sm:w-auto shrink-0 cursor-pointer">
+            <span>Get Started Now</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 15. Footer                             -->
+  <!-- ═══════════════════════════════════════ -->
+  <footer class="bg-[#FFF7EF] border-t border-[#14282F]/10 pt-12 sm:pt-16 pb-8 select-none">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-10 pb-8 sm:pb-12 border-b border-[#14282F]/10">
+
+        <!-- Brand -->
+        <div class="md:col-span-5 flex flex-col gap-4">
+          <a href="#" class="inline-flex items-center gap-2 self-start">
+            <img src="logo-transparent.png" alt="Edeezi Education" class="h-10 sm:h-12 w-auto object-contain">
+          </a>
+          <p class="text-[#415B63] text-xs sm:text-sm font-medium leading-relaxed max-w-sm">
+            Personalized individual &amp; small-batch tutoring designed for student success. We inspire learners from KG to 12th grade to master Mathematics, Science, Commerce, and school curricula.
+          </p>
+          <div class="flex items-center gap-2.5 mt-1">
+            <a href="https://wa.me/916238270399" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-white border border-[#14282F]/10 flex items-center justify-center text-[#415B63] hover:text-emerald-600 hover:border-emerald-400 transition">
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+            </a>
+            <a href="https://www.instagram.com/ed.eezi?igsh=cng0ZmN1cnE5ZDRn" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white border border-[#14282F]/10 flex items-center justify-center text-[#415B63] hover:text-rose-600 hover:border-rose-400 transition">
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+            <a href="tel:+916238270399" aria-label="Phone" class="w-9 h-9 rounded-full bg-white border border-[#14282F]/10 flex items-center justify-center text-[#415B63] hover:text-[#F68D1E] hover:border-orange-400 transition">
+              <i class="fa-solid fa-phone text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="md:col-span-3 flex flex-col gap-3">
+          <h4 class="text-xs font-black uppercase tracking-widest text-[#F68D1E] flex items-center gap-1.5">
+            <i class="fa-solid fa-sparkles"></i> Quick Links
+          </h4>
+          <div class="flex flex-col gap-2 text-xs sm:text-sm font-bold text-[#415B63]">
+            <a class="hover:text-[#F68D1E] transition" href="#advantage">The Edeezi Advantage</a>
+            <a class="hover:text-[#F68D1E] transition" href="#courses">Our Programs (KG-12)</a>
+            <a class="hover:text-[#F68D1E] transition" href="#how-it-works">How it Works</a>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="md:col-span-4 flex flex-col gap-3">
+          <h4 class="text-xs font-black uppercase tracking-widest text-[#14282F]">Contact &amp; Location</h4>
+          <div class="flex flex-col gap-2.5 text-xs sm:text-sm font-bold text-[#415B63]">
+            <a href="tel:+916238270399" class="hover:text-[#F68D1E] flex items-center gap-2 transition">
+              <i class="fa-solid fa-phone text-[#F68D1E] text-xs"></i>
+              <span>+91 62382 70399 (Primary)</span>
+            </a>
+            <a href="tel:+917012070399" class="hover:text-[#F68D1E] flex items-center gap-2 transition">
+              <i class="fa-solid fa-phone text-[#F68D1E] text-xs"></i>
+              <span>+91 70120 70399 (Secondary)</span>
+            </a>
+            <p class="text-xs text-[#6B7F85] font-medium leading-relaxed pt-1 border-t border-[#14282F]/10">
+              📍 Zabeel Complex, Malappuram Road, Changuvetty, Kottakkal, Kerala 676503
+            </p>
+            <div class="flex items-center gap-2 text-xs font-bold text-[#6B7F85]">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span>Center Hours: Mon – Sat · 10 AM – 7:30 PM</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left text-xs text-[#6B7F85] font-medium">
+        <p>© 2026 Edeezi Tuition (Education Double Easy). All rights reserved.</p>
+        <p class="flex items-center gap-1.5">Made with <i class="fa-solid fa-heart text-rose-500"></i> for every dedicated learner in Kottakkal</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- 16. Modals                             -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- Booking Modal -->
+  <dialog id="demoModal" class="p-0 rounded-3xl card max-w-md w-full bg-white shadow-2xl">
+    <div class="p-6 sm:p-7 space-y-4">
+      <div class="flex items-center justify-between border-b border-[#14282F]/10 pb-3">
+        <div>
+          <h3 class="font-heading font-black text-[#14282F] text-xl">Book Free Demo Class</h3>
+          <p class="text-xs text-[#415B63]">3-Day Complimentary Trial Session</p>
+        </div>
+        <button id="closeModalBtn" class="pill-white w-9 h-9 text-slate-500 flex items-center justify-center text-xs cursor-pointer hover:text-rose-500 transition">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="admissionForm" class="space-y-3.5 text-xs">
+        <div class="space-y-1">
+          <label for="studentName" class="font-bold text-[#14282F] block">Student's Full Name *</label>
+          <input type="text" id="studentName" required placeholder="e.g. Mohammed Farhan"
+            class="w-full px-3.5 py-2.5 rounded-xl border border-[#14282F]/10 bg-white text-sm text-[#14282F] focus:outline-none focus:ring-2 focus:ring-[#F68D1E]">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label for="studentGrade" class="font-bold text-[#14282F] block">Grade Level *</label>
+            <select id="studentGrade" required class="w-full px-3.5 py-2.5 rounded-xl border border-[#14282F]/10 bg-white text-sm text-[#14282F] focus:outline-none focus:ring-2 focus:ring-[#F68D1E]">
+              <option value="">Select Grade</option>
+              <option>KG to Grade 3</option>
+              <option>Grade 4 - 5</option>
+              <option>Grade 6 - 8</option>
+              <option>Grade 9</option>
+              <option>Grade 10 (SSLC/CBSE)</option>
+              <option>Plus One (11th)</option>
+              <option>Plus Two (12th)</option>
+            </select>
+          </div>
+          <div class="space-y-1">
+            <label for="studentSyllabus" class="font-bold text-[#14282F] block">Syllabus *</label>
+            <select id="studentSyllabus" required class="w-full px-3.5 py-2.5 rounded-xl border border-[#14282F]/10 bg-white text-sm text-[#14282F] focus:outline-none focus:ring-2 focus:ring-[#F68D1E]">
+              <option>CBSE</option>
+              <option>State Board</option>
+              <option>ICSE</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <label for="parentPhone" class="font-bold text-[#14282F] block">Phone / WhatsApp Number *</label>
+          <input type="tel" id="parentPhone" required placeholder="+91 62382 70399"
+            class="w-full px-3.5 py-2.5 rounded-xl border border-[#14282F]/10 bg-white text-sm text-[#14282F] focus:outline-none focus:ring-2 focus:ring-[#F68D1E]">
+        </div>
+
+        <button type="submit" class="btn-primary w-full py-3 text-xs font-black flex items-center justify-center gap-2 mt-2">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Confirm &amp; Message on WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Floating quick contact -->
+  <aside aria-label="Quick contact" class="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2.5">
+    <a href="tel:+916238270399"
+      class="bg-[#F68D1E] hover:bg-[#14282F] text-white rounded-full w-11 h-11 p-0 justify-center sm:w-auto sm:h-auto sm:px-4 sm:py-2.5 shadow-lg flex items-center gap-2 hover:scale-105 active:scale-95 transition-all text-xs font-black"
+      aria-label="Call Edeezi at +91 62382 70399">
+      <i class="fa-solid fa-phone text-base"></i>
+      <span class="hidden sm:inline">Call Us: +91 62382 70399</span>
+    </a>
+    <a href="https://wa.me/916238270399?text=Hello%20Edeezi%20Tuition,%20I%20would%20like%20to%20inquire%20about%20admissions."
+      target="_blank" rel="noopener noreferrer" aria-label="Chat with counselors on WhatsApp"
+      class="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full w-11 h-11 p-0 justify-center sm:w-auto sm:h-auto sm:px-4 sm:py-2.5 shadow-lg flex items-center gap-2 hover:scale-105 active:scale-95 transition-all text-xs font-black">
+      <i class="fa-brands fa-whatsapp text-base"></i>
+      <span class="hidden sm:inline">Chat with Counselors</span>
+    </a>
+  </aside>
+
+  <!-- Edeezi Bot launcher (bottom-left) -->
+  <button id="edeeziBotLauncher" type="button" onclick="toggleEdeeziBot()" aria-label="Open Edeezi Bot" aria-expanded="false" aria-controls="edeeziBotPanel"
+    class="fixed bottom-5 left-4 sm:left-5 z-40 bg-[#F68D1E] hover:bg-[#e07d15] sm:bg-[#14282F] sm:hover:bg-[#F68D1E] text-white rounded-full pl-2 pr-4 py-1.5 shadow-lg flex items-center gap-2 hover:scale-105 active:scale-95 transition-all text-[13px] font-black">
+    <span class="w-8 h-8 rounded-full bg-transparent sm:bg-[#F68D1E] text-white flex items-center justify-center shrink-0">
+      <i class="fa-solid fa-robot text-sm"></i>
+    </span>
+    <span>Edeezi Bot</span>
+  </button>
+
+  <!-- Edeezi Bot brand-assistant panel (closed by default) -->
+  <div id="edeeziBotPanel" role="dialog" aria-label="Edeezi Bot brand assistant"
+    class="hidden fixed bottom-20 left-4 sm:left-5 z-50 w-[calc(100vw-2rem)] sm:w-[390px] h-[72vh] sm:h-[560px] max-h-[calc(100vh-7rem)] bg-white rounded-3xl shadow-2xl border border-[#14282F]/10 flex flex-col overflow-hidden">
+
+    <!-- Header -->
+    <div class="bg-[#14282F] text-white px-4 py-3.5 flex items-center gap-3 shrink-0">
+      <span class="w-9 h-9 rounded-xl bg-[#F68D1E] flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-robot text-sm"></i>
+      </span>
+      <div class="min-w-0 flex-1">
+        <p class="text-sm font-black leading-tight">Edeezi Bot</p>
+        <p class="text-[10px] text-white/60 font-semibold truncate">Edeezi brand assistant · Ask me about Edeezi</p>
+      </div>
+      <button type="button" onclick="closeEdeeziBot()" aria-label="Close Edeezi Bot"
+        class="w-8 h-8 rounded-full hover:bg-white/10 flex items-center justify-center transition shrink-0">
+        <i class="fa-solid fa-xmark text-sm"></i>
+      </button>
+    </div>
+
+    <!-- Quick questions -->
+    <div class="px-3 pt-3 pb-2 flex gap-1.5 overflow-x-auto shrink-0 no-scrollbar bg-white">
+      <button type="button" class="bot-chip inline-flex items-center whitespace-nowrap px-3 py-1.5 rounded-full bg-[#FFF7EF] border border-[#F68D1E]/30 text-[10px] font-bold text-[#14282F] hover:border-[#F68D1E] hover:bg-[#FFE9D2] transition" data-q="What courses do you offer?">Courses</button>
+      <button type="button" class="bot-chip inline-flex items-center whitespace-nowrap px-3 py-1.5 rounded-full bg-[#FFF7EF] border border-[#F68D1E]/30 text-[10px] font-bold text-[#14282F] hover:border-[#F68D1E] hover:bg-[#FFE9D2] transition" data-q="What are the timings?">Timings</button>
+      <button type="button" class="bot-chip inline-flex items-center whitespace-nowrap px-3 py-1.5 rounded-full bg-[#FFF7EF] border border-[#F68D1E]/30 text-[10px] font-bold text-[#14282F] hover:border-[#F68D1E] hover:bg-[#FFE9D2] transition" data-q="Where are you located?">Location</button>
+      <button type="button" class="bot-chip inline-flex items-center whitespace-nowrap px-3 py-1.5 rounded-full bg-[#FFF7EF] border border-[#F68D1E]/30 text-[10px] font-bold text-[#14282F] hover:border-[#F68D1E] hover:bg-[#FFE9D2] transition" data-q="How do I book a free demo?">Free demo</button>
+      <button type="button" class="bot-chip inline-flex items-center whitespace-nowrap px-3 py-1.5 rounded-full bg-[#FFF7EF] border border-[#F68D1E]/30 text-[10px] font-bold text-[#14282F] hover:border-[#F68D1E] hover:bg-[#FFE9D2] transition" data-q="What are the fees?">Fees</button>
+    </div>
+
+    <!-- Messages -->
+    <div id="botWidgetMessages" class="flex-1 min-h-0 overflow-y-auto px-3.5 py-3 space-y-3 bg-[#FFF9F3]">
+      <div class="flex items-start gap-2">
+        <div class="w-7 h-7 rounded-lg bg-[#F68D1E] text-white flex items-center justify-center text-[11px] shrink-0 mt-0.5">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="chat-bubble-bot px-3.5 py-2.5 text-[11px] text-[#14282F] leading-relaxed">
+          Hi! I’m <strong>Edeezi Bot</strong>, the brand assistant for Edeezi Tuition (Education Double Easy). Ask me about our courses, subjects, timings, location, fees policy, free demo or admissions.
+        </div>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <form id="botWidgetForm" class="p-3 border-t border-[#14282F]/10 bg-white flex items-center gap-2 shrink-0">
+      <input id="botWidgetInput" type="text" placeholder="Ask about Edeezi..." autocomplete="off"
+        class="flex-1 min-w-0 px-3.5 py-2.5 text-xs text-[#14282F] placeholder-[#6B7F85] focus:outline-none focus:ring-2 focus:ring-[#F68D1E] rounded-xl border border-[#14282F]/10 bg-white">
+      <button type="submit" class="btn-primary w-10 h-10 !p-0 flex items-center justify-center shrink-0" aria-label="Send message">
+        <i class="fa-solid fa-paper-plane text-xs"></i>
+      </button>
+    </form>
+
+    <p class="px-3 pb-2 text-[9px] leading-tight text-[#6B7F85] bg-white shrink-0">
+      Edeezi brand assistant. For admissions, call <a href="tel:+916238270399" class="text-[#F68D1E] font-bold">+91 62382 70399</a>.
+    </p>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- JavaScript                             -->
+  <!-- ═══════════════════════════════════════ -->
+  <script>
+    // ─── Data ───────────────────────────────
+    const WHATSAPP = '916238270399';
+    const BRAND = '#F68D1E';
+
+    const COURSES = {
+      primary: {
+        title: 'Primary School (KG – Grade 5)',
+        icon: '🎒',
+        color: 'emerald',
+        subjects: ['English Language & Reading', 'Mathematics Fundamentals', 'Environmental Science (EVS)', 'Malayalam / Hindi', 'General Knowledge'],
+        highlights: ['Fun concept-based learning', 'Phonics & reading fluency', 'Activity-based math foundations', 'Builds curiosity & confidence'],
+        boards: ['CBSE', 'Kerala State Board', 'ICSE']
+      },
+      middle: {
+        title: 'Middle School (Grade 6 – 8)',
+        icon: '📘',
+        color: 'sky',
+        subjects: ['Mathematics (Algebra, Geometry)', 'Physics & Chemistry Basics', 'Biology / Life Sciences', 'English Grammar & Literature', 'Social Science', 'Computer Science'],
+        highlights: ['Concept clarity before exam prep', 'Weekly chapter tests', 'Individual doubt resolution', 'Bridging primary to board level'],
+        boards: ['CBSE', 'Kerala State Board (SSLC pathway)', 'ICSE']
+      },
+      highschool: {
+        title: 'High School Board (Grade 9 & 10)',
+        icon: '🏆',
+        color: 'amber',
+        subjects: ['Mathematics (SA1 & SA2)', 'Physics', 'Chemistry', 'Biology', 'English (Board Pattern)', 'Social Science'],
+        highlights: ['Board exam-focused preparation', 'Previous year paper analysis', 'Mock test series', 'Parent progress reports monthly'],
+        boards: ['CBSE Class 10', 'Kerala SSLC Board', 'ICSE Class 10']
+      },
+      highersecondary: {
+        title: 'Plus One & Two (Grade 11 & 12)',
+        icon: '🚀',
+        color: 'purple',
+        subjects: ['Mathematics (Calculus, Probability)', 'Physics (Theory + Numericals)', 'Chemistry (Organic & Inorganic)', 'Biology', 'Commerce & Accountancy', 'Computer Science'],
+        highlights: ['Deep conceptual coverage', 'NEET / JEE foundation awareness', 'Board + entrance exam blend', 'Topic-by-topic master notes'],
+        boards: ['Kerala DHSE (Plus One / Plus Two)', 'CBSE Class 11 & 12', 'ICSE / ISC']
+      }
+    };
+
+    const REVIEWS = [
+      { name: 'Aisha K.', parent: 'Parent of Class 10 student', text: 'My daughter\'s Math marks went from 68 to 94 in one semester. The 1-on-1 attention is unmatched!', stars: 5 },
+      { name: 'Roshan P.', parent: 'Parent of Class 8 student', text: 'Edeezi teachers are incredibly patient. My son finally understands Physics conceptually now.', stars: 5 },
+      { name: 'Hana J.', parent: 'Class 12 parent', text: 'I asked Edeezi Bot about timings and courses at 11pm — it answered instantly. Super helpful!', stars: 5 },
+      { name: 'Sabu M.', parent: 'Parent of Class 6 student', text: 'Weekly progress reports keep us well informed. Teachers go the extra mile every time.', stars: 5 },
+      { name: 'Zara N.', parent: 'Parent of Class 9 student', text: 'From failing Science to scoring an A grade — Edeezi made all the difference!', stars: 5 },
+      { name: 'Fahad R.', parent: 'Plus Two student', text: 'The free 3-day demo convinced me. Now I\'m topping my class. Best decision ever.', stars: 5 }
+    ];
+
+    const FAQS = [
+      { q: 'What grades does Edeezi cater to?', a: 'Edeezi provides tutoring for students from KG (Kindergarten) to Grade 12, covering all major boards including CBSE, Kerala State Board (SSLC/DHSE), and ICSE.' },
+      { q: 'How is Edeezi different from regular tuition classes?', a: 'We offer personalized 1-on-1 and small batch coaching (max 8-10 students) with concept-first pedagogy, weekly diagnostic tests, parent progress reports, and Edeezi Bot for instant answers about courses, timings and admissions.' },
+      { q: 'What is the Free 3-Day Demo Class?', a: 'You can experience our teaching methodology, meet your assigned subject mentor, and evaluate learning comfort completely free for 3 days — no payment or commitment required.' },
+      { q: 'Do you offer online classes?', a: 'Yes! We offer both in-person sessions at our Changuvetty campus and live online sessions. Both formats maintain the same quality and personalized attention.' },
+      { q: 'How do I book a demo class?', a: 'Simply click "Book Free Class" on this page, fill in your child\'s details, and our counselor will contact you on WhatsApp within a few hours to schedule your free demo.' },
+      { q: 'What is the batch size at Edeezi?', a: 'We maintain a maximum of 8-10 students per batch to ensure every student receives adequate personal attention and concept clarity from the subject mentor.' }
+    ];
+
+    // ─── Render Functions ────────────────────
+    function renderCourseTab(courseKey) {
+      const c = COURSES[courseKey];
+      const brandSet = { bg: 'bg-[#FFF7EF]', border: 'border-[#F68D1E]/30', text: 'text-[#F68D1E]', badge: 'bg-[#FFF1E3] text-[#14282F]' };
+      const colorMap = {
+        emerald: brandSet,
+        sky: brandSet,
+        amber: brandSet,
+        purple: brandSet
+      };
+      const col = colorMap[c.color];
+      document.getElementById('courseContentArea').innerHTML = `
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">${c.icon}</span>
+              <div>
+                <h3 class="text-xl font-black text-[#14282F] font-heading">${c.title}</h3>
+                <p class="text-xs text-[#415B63] font-medium">Available Boards: ${c.boards.join(' · ')}</p>
+              </div>
+            </div>
+            <div>
+              <p class="text-xs font-black text-[#6B7F85] uppercase tracking-wider mb-3">Subjects Covered</p>
+              <div class="flex flex-wrap gap-2">
+                ${c.subjects.map(s => `<span class="px-3 py-1 ${col.bg} ${col.border} border ${col.text} text-xs font-bold rounded-full">${s}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+          <div class="space-y-3">
+            <p class="text-xs font-black text-[#6B7F85] uppercase tracking-wider">Key Highlights</p>
+            ${c.highlights.map(h => `
+              <div class="flex items-start gap-2">
+                <span class="text-[#F68D1E] text-xs mt-0.5">✓</span>
+                <span class="text-xs font-medium text-[#415B63]">${h}</span>
+              </div>`).join('')}
+            <button onclick="openBookingModal('${c.title}')" class="btn-primary w-full py-2.5 text-xs mt-2">
+              <span>Book Free Demo for ${c.icon} Level</span>
+            </button>
+          </div>
+        </div>`;
+    }
+
+    function renderReviews() {
+      const allReviews = [...REVIEWS, ...REVIEWS];
+      document.getElementById('reviewsMarqueeTrack').innerHTML = allReviews.map(r => `
+        <div class="card p-5 space-y-3 shrink-0 w-72 border border-[#14282F]/10">
+          <div class="flex">
+            ${'<i class="fa-solid fa-star text-orange-400 text-xs"></i>'.repeat(r.stars)}
+          </div>
+          <p class="text-xs text-[#415B63] leading-relaxed">"${r.text}"</p>
+          <div>
+            <p class="text-xs font-black text-[#14282F]">${r.name}</p>
+            <p class="text-[10px] text-[#6B7F85]">${r.parent}</p>
+          </div>
+        </div>`).join('');
+
+      document.getElementById('reviewsGrid').innerHTML = REVIEWS.slice(0,3).map(r => `
+        <div class="card p-6 space-y-4 border border-[#14282F]/10">
+          <div class="flex justify-between items-start">
+            <div class="flex">
+              ${'<i class="fa-solid fa-star text-orange-400 text-xs"></i>'.repeat(r.stars)}
+            </div>
+            <span class="text-[10px] font-bold text-[#F68D1E] bg-orange-50 px-2 py-0.5 rounded-full border border-orange-200">Verified</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[#415B63] leading-relaxed">"${r.text}"</p>
+          <div>
+            <p class="text-sm font-black text-[#14282F]">${r.name}</p>
+            <p class="text-xs text-[#6B7F85]">${r.parent}</p>
+          </div>
+        </div>`).join('');
+    }
+
+    function renderFAQ() {
+      document.getElementById('faqContainer').innerHTML = FAQS.map((f, i) => `
+        <div class="card border border-[#14282F]/10 faq-item">
+          <details ${i===0?'open':''}>
+            <summary class="flex items-center justify-between p-5 gap-3">
+              <span class="text-sm font-black text-[#14282F]">${f.q}</span>
+              <span class="text-[#F68D1E] shrink-0"><i class="fa-solid fa-chevron-down text-xs"></i></span>
+            </summary>
+            <p class="px-5 pb-5 text-xs sm:text-sm text-[#415B63] leading-relaxed">${f.a}</p>
+          </details>
+        </div>`).join('');
+    }
+
+    // ─── Edeezi Bot (brand assistant) ────────
+    const BOT_HISTORY = [];
+    const BOT_ENDPOINT = '/api/chat';
+    let botApiUnavailable = false;
+
+    // Offline brand knowledge base — used when the serverless API is not available.
+    const BRAND_KB = {
+      about: 'Edeezi Tuition (Education Double Easy) is a concept-first tuition centre in Kottakkal, Kerala. We give students from KG to Grade 12 personal 1-on-1 attention and small-batch coaching. Our tagline is “Because Every Child Deserves Personal Attention.”',
+      programs: 'We teach four groups: Primary (KG – Grade 5), Middle School (Grade 6 – 8), High School (Grade 9 & 10), and Plus One & Two (Grade 11 & 12).',
+      boardPolicy: 'Board options are confirmed by the academic counselor based on the student’s grade. Please call or WhatsApp +91 62382 70399.',
+      subjects: 'Subjects include Mathematics, Physics, Chemistry, Biology, English, Social Science, Commerce & Accountancy, Computer Science, and Malayalam/Hindi.',
+      methodology: 'Our 4-step method: 1) Know Us, 2) Understand the Student with a baseline assessment, 3) 3-Day Free Demo, 4) a Custom Study Roadmap for the term.',
+      features: 'Edeezi offers 1-on-1 attention, small batches of 8–10 students, weekly tests, parent progress reports, subject-specialist mentors and exam-focused preparation.',
+      demo: 'You can book a free 3-day demo class with no payment or commitment. Tap “Book Free Class” on this page or WhatsApp +91 62382 70399.',
+      fees: 'Fees are not published. The academic counselor will share the current fee structure based on your child’s grade and requirements — call or WhatsApp +91 62382 70399.',
+      timing: 'Edeezi is open Monday to Saturday, 10:00 AM – 7:30 PM.',
+      location: 'We are at Zabeel Complex, Malappuram Road, Changuvetty, Kottakkal, Kerala 676503 (Plus Code: 2X2V+37 Changuvetty).',
+      contact: 'Call +91 62382 70399 (primary) or +91 70120 70399 (secondary). WhatsApp: +91 62382 70399.',
+      online: 'We offer in-person classes at our Changuvetty campus and live online classes. Please confirm current online availability with the counselor.',
+      batch: 'Batches are kept small — a maximum of 8–10 students — so every learner gets personal attention.',
+      review: 'Parents and students rate Edeezi 4.9 out of 5, praising the personal attention and regular progress reports.',
+      mentor: 'Edeezi’s mentors are qualified subject specialists. They handle the teaching, diagnostics and parent progress reports.',
+      admission: 'Admissions are open for 2026–27. Book a free demo and the counselor will guide you through the joining process.',
+      homework: 'I’m Edeezi Bot, the brand assistant for Edeezi Tuition — I answer questions about our centre, courses, timings and admissions, not homework. Our subject mentors can help with that. Book a free demo or call +91 62382 70399.',
+      default: 'I’m Edeezi Bot, the brand assistant for Edeezi Tuition. Ask me about our courses, subjects, timings, location, fees policy, free demo or admissions. For anything specific, call or WhatsApp +91 62382 70399.'
+    };
+
+    const BRAND_INTENTS = {
+      about:       ['about', 'who are you', 'what is edeezi', 'edeezi mean', 'education double easy', 'tagline'],
+      admission:   ['admission', 'admissions', '2026', '2027', 'joining'],
+      demo:        ['demo', 'free class', 'free trial', 'trial', 'book', 'booking', 'enrol', 'join'],
+      fees:        ['fee', 'fees', 'price', 'pricing', 'cost', 'payment', 'how much', 'charge'],
+      timing:      ['timing', 'timings', 'hours', 'open', 'close', 'schedule', 'what time', 'when'],
+      location:    ['location', 'located', 'where', 'address', 'reach', 'campus', 'direction', 'map', 'plus code'],
+      contact:     ['contact', 'phone', 'call', 'whatsapp', 'number', 'email'],
+      online:      ['online', 'zoom', 'remote', 'virtual'],
+      batch:       ['batch', 'batches', 'strength', 'students per', 'class size'],
+      boardPolicy: ['board', 'boards', 'cbse', 'icse', 'sslc', 'dhse', 'state board', 'syllabus'],
+      subjects:    ['subject', 'subjects', 'maths', 'mathematics', 'physics', 'chemistry', 'biology', 'english', 'commerce', 'computer'],
+      methodology: ['method', 'methodology', 'how it works', 'how do you teach', 'teaching', 'roadmap', 'steps'],
+      features:    ['feature', 'features', 'why edeezi', 'why choose', 'different', 'small batch', 'one on one', '1-on-1', 'personal attention'],
+      programs:    ['course', 'courses', 'program', 'programs', 'grade', 'grades', 'kg', 'class', 'classes'],
+      review:      ['review', 'reviews', 'rating', 'testimonial', 'feedback'],
+      mentor:      ['mentor', 'mentors', 'teacher', 'teachers', 'tutor', 'tutors', 'faculty']
+    };
+
+    function getOfflineBrandReply(text) {
+      const t = (text || '').toLowerCase();
+      if (/(homework|solve|equation|pythagoras|newton|photosynthesis|grammar|essay|assignment|exam question)/.test(t)) {
+        return BRAND_KB.homework;
+      }
+      for (const [key, words] of Object.entries(BRAND_INTENTS)) {
+        if (words.some(w => t.includes(w)) && BRAND_KB[key]) return BRAND_KB[key];
+      }
+      return BRAND_KB.default;
+    }
+
+    function botFormat(text) {
+      return String(text)
+        .replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))
+        .replace(/\n/g, '<br>');
+    }
+
+    function botPushHistory(role, content) {
+      BOT_HISTORY.push({ role: role, content: content });
+      if (BOT_HISTORY.length > 16) BOT_HISTORY.splice(0, BOT_HISTORY.length - 16);
+    }
+
+    async function getBrandReply(text) {
+      botPushHistory('user', text);
+
+      if (botApiUnavailable) {
+        const offline = getOfflineBrandReply(text);
+        botPushHistory('assistant', offline);
+        return offline;
+      }
+
+      let endpointUnavailable = true;
+      try {
+        const res = await fetch(BOT_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages: BOT_HISTORY.slice(-12) })
+        });
+
+        if (res.ok) {
+          endpointUnavailable = false;
+          const data = await res.json();
+          const answer = data && (data.reply || (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content));
+          if (answer && String(answer).trim()) {
+            const reply = String(answer).trim();
+            botPushHistory('assistant', reply);
+            return reply;
+          }
+        } else if (res.status !== 404 && res.status !== 405 && res.status !== 501) {
+          // The function exists (e.g. 503 = missing key), so keep trying in future.
+          endpointUnavailable = false;
+        }
+      } catch (err) {
+        // Network/CORS failure — fall back to the offline brand answers.
+      }
+
+      if (endpointUnavailable) botApiUnavailable = true;
+      const offline = getOfflineBrandReply(text);
+      botPushHistory('assistant', offline);
+      return offline;
+    }
+
+    function botAppend(text, isBot) {
+      const box = document.getElementById('botWidgetMessages');
+      if (!box) return null;
+      const div = document.createElement('div');
+      div.className = `flex items-start gap-2 ${isBot ? '' : 'flex-row-reverse'}`;
+      div.innerHTML = isBot
+        ? `<div class="w-7 h-7 rounded-lg bg-[#F68D1E] text-white flex items-center justify-center text-[11px] shrink-0 mt-0.5"><i class="fa-solid fa-robot"></i></div>
+           <div class="chat-bubble-bot px-3.5 py-2.5 text-[11px] text-[#14282F] leading-relaxed">${botFormat(text)}</div>`
+        : `<div class="w-7 h-7 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center text-[10px] shrink-0 mt-0.5"><i class="fa-solid fa-user"></i></div>
+           <div class="chat-bubble-user">${botFormat(text)}</div>`;
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+      return div;
+    }
+
+    function botTyping() {
+      const box = document.getElementById('botWidgetMessages');
+      if (!box) return null;
+      const div = document.createElement('div');
+      div.className = 'flex items-start gap-2';
+      div.innerHTML = `<div class="w-7 h-7 rounded-lg bg-[#F68D1E] text-white flex items-center justify-center text-[11px] shrink-0 mt-0.5"><i class="fa-solid fa-robot"></i></div>
+         <div class="chat-bubble-bot px-3.5 py-2.5 text-[11px] text-[#6B7F85] leading-relaxed"><i class="fa-solid fa-ellipsis fa-fade"></i> Edeezi Bot is typing…</div>`;
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+      return div;
+    }
+
+    async function askEdeeziBot(text) {
+      const val = (text || '').trim();
+      if (!val) return;
+      botAppend(val, false);
+      const typing = botTyping();
+      try {
+        const reply = await getBrandReply(val);
+        if (typing) typing.remove();
+        botAppend(reply, true);
+      } catch (e) {
+        if (typing) typing.remove();
+        botAppend(getOfflineBrandReply(val), true);
+      }
+    }
+
+    function openEdeeziBot() {
+      const panel = document.getElementById('edeeziBotPanel');
+      const launcher = document.getElementById('edeeziBotLauncher');
+      if (!panel) return;
+      panel.classList.remove('hidden');
+      if (launcher) launcher.setAttribute('aria-expanded', 'true');
+      const drawer = document.getElementById('mobileDrawer');
+      if (drawer) drawer.classList.add('hidden');
+      const icon = document.getElementById('menuIcon');
+      if (icon) icon.className = 'fa-solid fa-bars text-sm';
+      setTimeout(() => { const inp = document.getElementById('botWidgetInput'); if (inp) inp.focus(); }, 80);
+    }
+
+    function closeEdeeziBot() {
+      const panel = document.getElementById('edeeziBotPanel');
+      const launcher = document.getElementById('edeeziBotLauncher');
+      if (panel) panel.classList.add('hidden');
+      if (launcher) launcher.setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleEdeeziBot() {
+      const panel = document.getElementById('edeeziBotPanel');
+      if (panel && panel.classList.contains('hidden')) openEdeeziBot();
+      else closeEdeeziBot();
+    }
+
+    window.openEdeeziBot = openEdeeziBot;
+    window.closeEdeeziBot = closeEdeeziBot;
+    window.toggleEdeeziBot = toggleEdeeziBot;
+    window.askEdeeziBot = askEdeeziBot;
+
+    // ─── Modals ──────────────────────────────
+    window.openBookingModal = function(source) {
+      document.getElementById('demoModal').showModal();
+    };
+
+    // ─── Init ────────────────────────────────
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCourseTab('primary');
+      renderReviews();
+      renderFAQ();
+
+      // Top announcement marquee: pause while touched, then resume shortly after.
+      document.querySelectorAll('.top-marquee-wrap').forEach(wrap => {
+        const track = wrap.querySelector('.top-marquee-track');
+        if (!track) return;
+        let resumeTimer;
+        const pause = () => {
+          clearTimeout(resumeTimer);
+          track.classList.add('marquee-paused');
+        };
+        const resume = () => track.classList.remove('marquee-paused');
+        wrap.addEventListener('touchstart', pause, { passive: true });
+        wrap.addEventListener('touchend', () => {
+          clearTimeout(resumeTimer);
+          resumeTimer = setTimeout(resume, 1400);
+        }, { passive: true });
+        wrap.addEventListener('touchcancel', resume, { passive: true });
+      });
+      document.querySelectorAll('[data-marquee-clone] a, [data-marquee-clone] button').forEach(el => {
+        el.tabIndex = -1;
+      });
+
+      // Mobile menu
+      document.getElementById('mobileMenuToggle').addEventListener('click', () => {
+        const drawer = document.getElementById('mobileDrawer');
+        const icon = document.getElementById('menuIcon');
+        drawer.classList.toggle('hidden');
+        icon.className = drawer.classList.contains('hidden') ? 'fa-solid fa-bars text-sm' : 'fa-solid fa-xmark text-sm';
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobileDrawer').classList.add('hidden');
+          document.getElementById('menuIcon').className = 'fa-solid fa-bars text-sm';
+        });
+      });
+
+      // Course tabs
+      document.querySelectorAll('.course-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.course-tab-btn').forEach(b => {
+            b.classList.remove('bg-[#F68D1E]', 'text-white');
+            b.classList.add('bg-white', 'text-[#415B63]');
+          });
+          btn.classList.add('bg-[#F68D1E]', 'text-white');
+          btn.classList.remove('bg-white', 'text-[#415B63]');
+          renderCourseTab(btn.dataset.course);
+        });
+      });
+
+      // Edeezi Bot widget (closed by default)
+      document.getElementById('botWidgetForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const inp = document.getElementById('botWidgetInput');
+        askEdeeziBot(inp.value);
+        inp.value = '';
+      });
+
+      document.querySelectorAll('.bot-chip').forEach(chip => {
+        chip.addEventListener('click', () => askEdeeziBot(chip.dataset.q || chip.textContent));
+      });
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeEdeeziBot();
+      });
+
+      // Demo buttons → modal
+      ['heroDemoBtn', 'headerDemoBtn', 'mobileDemoBtn'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('click', () => openBookingModal(id));
+      });
+
+      // Close modal
+      document.getElementById('closeModalBtn').addEventListener('click', () => document.getElementById('demoModal').close());
+      document.getElementById('demoModal').addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.close(); });
+
+      // Booking form submit → WhatsApp
+      document.getElementById('admissionForm').addEventListener('submit', e => {
+        e.preventDefault();
+        const name = document.getElementById('studentName').value.trim();
+        const grade = document.getElementById('studentGrade').value;
+        const syllabus = document.getElementById('studentSyllabus').value;
+        const phone = document.getElementById('parentPhone').value.trim();
+        const msg = encodeURIComponent(`Hello Edeezi Tuition! I'd like to book a Free 3-Day Demo Class.\n\nStudent: ${name}\nGrade: ${grade}\nSyllabus: ${syllabus}\nPhone: ${phone}\n\nPlease confirm the schedule. Thank you!`);
+        const url = `https://wa.me/${WHATSAPP}?text=${msg}`;
+        const win = window.open(url, '_blank');
+        if (!win) window.location.href = url;
+        document.getElementById('demoModal').close();
+        e.target.reset();
+      });
+    });
+  </script>
+
+</body>
+</html>
